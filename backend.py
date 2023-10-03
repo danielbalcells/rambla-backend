@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from chain import RamblaChain
-import mapping
 
 app = Flask(__name__)
 
@@ -40,7 +39,8 @@ def handle_input():
 
     chain = chains_per_user.get(username)
     if not chain:
-        return jsonify({"error": "Session not initialized"}), 400
+        chain = RamblaChain()
+        chains_per_user[username] = chain
 
     next_questions = chain.interact(user_input)
 
