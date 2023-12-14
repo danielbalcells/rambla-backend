@@ -2,6 +2,10 @@ This repo contains the very simple backend used to power Rambla, a walking medit
 
 In a nutshell, Rambla is an iOS app that helps the user explore complex topics by breaking them down into simpler questions, which are represented as nearby locations in a map. As the user walks to these locations and answers the questions, more questions appear, based on the overall meditation.
 
+![](https://danielbalcells.files.wordpress.com/2023/10/img_2712.png?w=300) ![](https://danielbalcells.files.wordpress.com/2023/10/img_2713.png?w=300) ![](https://danielbalcells.files.wordpress.com/2023/10/img_2704.png?w=300)
+![](https://danielbalcells.files.wordpress.com/2023/10/img_2707.png?w=300) ![](https://danielbalcells.files.wordpress.com/2023/10/img_2709.png?w=300) ![](https://danielbalcells.files.wordpress.com/2023/10/img_2710.png?w=300)
+
+
 The backend works as follows:
 - It receives requests from the iOS app containing the user's input (initial topic and subsequent replies), and responds with simple, relevant questions.
 - `backend.py` initializes a Flask server (good enough for personal/testing use) and a custom LLM chain.
