@@ -49,6 +49,12 @@ class BaseNode(Generic[T]):
             index = self.parent.children.index(self)
             parent_coords = self.parent.get_coordinates()
             return f'{parent_coords}.{index}'
+    
+    def print_tree(self, depth: int = 0) -> None:
+        indent = '  ' * depth
+        print(f'{indent}{self.get_coordinates()} - {self.text}')
+        for child in self.get_children():
+            child.print_tree(depth + 1)
 
 
 class OutputNode(BaseNode['InputNode']):
@@ -72,4 +78,7 @@ class Tree:
             except IndexError:
                 raise IndexError(f'Index {index} out of bounds for node {current_node}')
         return current_node
+
+    def print_tree(self) -> None:
+        self.root.print_tree()
 
