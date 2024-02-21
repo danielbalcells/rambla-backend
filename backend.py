@@ -18,8 +18,8 @@ def start_game():
     if not device_id:
         return jsonify({"error": "Missing required data"}), 400
 
-      if username not in allowed_users:
-          return jsonify({"error": "Unauthorized"}), 403
+    #   if username not in allowed_users:
+    #       return jsonify({"error": "Unauthorized"}), 403
 
     chains_per_device[device_id] = RamblaChain()
     return jsonify(), 200
@@ -34,8 +34,8 @@ def handle_input():
     if not device_id or not user_input:
         return jsonify({"error": "Missing required data"}), 400
 
-      if username not in allowed_users:
-          return jsonify({"error": "Unauthorized"}), 403
+    #   if username not in allowed_users:
+    #       return jsonify({"error": "Unauthorized"}), 403
 
     chain = chains_per_device.get(device_id)
     if not chain:
